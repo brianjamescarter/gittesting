@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE VIEW dv_05_fact_record_count_part2 FOLDER = '/3.combine - physical dim' AS SELECT dv_04_union_all_part2.hash_0 AS hash_0, 1 AS total_record_count, dv_04_union_all_part2.state AS state FROM dv_04_union_all_part2;
+﻿CREATE OR REPLACE VIEW dv_05_fact_record_count_part2 FOLDER = '/3.combine - physical dim' AS SELECT dv_04_union_all_part2.hash_0 AS hash_0, 1 AS total_record_count, dv_04_union_all_part2.state AS state, dv_04_union_all_part2.downloadingfrom AS downloadingfrom FROM dv_04_union_all_part2;
 
 ALTER VIEW dv_05_fact_record_count_part2
  LAYOUT (dv_04_union_all_part2 = [20, 20, 200, 105]);
