@@ -1,0 +1,13 @@
+﻿CREATE OR REPLACE INTERFACE VIEW i_fact_record_count (
+        hash_0:text,
+        total_record_count:int
+    )
+    SET IMPLEMENTATION dv_05_fact_record_count_part2(
+        hash_0 = hash_0,
+        total_record_count = total_record_count    
+)
+    FOLDER = '/4.canonical models/trans_log';
+
+ALTER VIEW i_fact_record_count
+ LAYOUT (dv_05_fact_record_count_part2 = [543, 20, 241, 86]);
+

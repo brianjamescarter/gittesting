@@ -1,0 +1,5 @@
+﻿CREATE OR REPLACE VIEW dv_03_trans_log_union FOLDER = '/3.combine - original/dim_names' AS SELECT DISTINCT name, hash_0 FROM (SELECT * FROM dv_01_trans_log_1_names UNION SELECT name2 AS name, hash2 AS hash_0 FROM dv_02_trans_log_2_names);
+
+ALTER VIEW dv_03_trans_log_union
+ LAYOUT (dv_01_trans_log_1_names = [89, 169, 200, 66], dv_02_trans_log_2_names = [390, 170, 200, 66]);
+

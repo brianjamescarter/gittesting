@@ -1,0 +1,10 @@
+﻿/databases/ei_core/folder.3.combine - original/3.combine - original.vql
+/databases/ei_core/folder.3.combine - original/folder.fact_counts/fact_counts.vql
+/databases/ei_core/folder.2.base views/2.base views.vql
+/databases/ei_core/folder.1.connections/1.connections.vql
+/databases/ei_core/folder.1.connections/datasources/jdbc/ds_dataset1.vql
+/databases/ei_core/folder.2.base views/views/bv_trans_log_1.vql
+/databases/ei_core/folder.3.combine - original/views/dv_01_trans_log_1_names.vql
+/databases/ei_core/folder.1.connections/datasources/jdbc/ds_dataset2.vql
+/databases/ei_core/folder.2.base views/views/bv_trans_log_2.vql
+/databases/ei_core/folder.3.combine - original/views/dv_02_trans_log_2_names.vql

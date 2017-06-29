@@ -1,0 +1,18 @@
+﻿CREATE OR REPLACE TABLE bv_testsheet_xlsx I18N us_mst_mdt (
+        cola:text, 
+        colb:text
+    )
+    FOLDER = '/2.base views'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD ds_testsheet_xlsx(
+        I18N us_mst_mdt
+        CONSTRAINTS (
+             ADD cola (any) OPT ANY
+             ADD colb (any) OPT ANY
+        )
+        OUTPUTLIST (cola, colb
+        )
+        WRAPPER (custom ds_testsheet_xlsx)
+    );
+

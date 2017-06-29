@@ -1,0 +1,10 @@
+﻿CREATE OR REPLACE INTERFACE VIEW ssrs_fact_record_count (
+        hash_0:text,
+        total_record_count:int
+    )
+    SET IMPLEMENTATION ei_core.i_fact_record_count
+    FOLDER = '/02_publish';
+
+ALTER VIEW ssrs_fact_record_count
+ LAYOUT (i_fact_record_count = [606, 300, 201, 66]);
+

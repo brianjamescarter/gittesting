@@ -1,0 +1,5 @@
+﻿CREATE OR REPLACE VIEW dv_04_union_all FOLDER = '/3.combine - original/fact_counts' AS SELECT name, hash_0, connectedto, have, downloadtime, id, uploaded, downspeed, latestactivity, percentdone, dateadded, upspeed, downloadingfrom, downloaded, seedtime, as_of_date, uploadingto, totalsize, state FROM (SELECT * FROM dv_01_trans_log_1_names UNION SELECT downloadingfrom, uploadingto, percentdone, connectedto, uploaded, name2 AS name, downloadtime, hash2 AS hash_0, downloaded, as_of_date, upspeed, downspeed, state, seedtime, dateadded, totalsize, have, latestactivity, id FROM dv_02_trans_log_2_names);
+
+ALTER VIEW dv_04_union_all
+ LAYOUT (dv_01_trans_log_1_names = [90, 197, 200, 225], dv_02_trans_log_2_names = [490, 200, 200, 225]);
+

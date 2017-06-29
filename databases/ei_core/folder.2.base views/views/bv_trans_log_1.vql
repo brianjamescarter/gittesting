@@ -1,0 +1,81 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC bv_trans_log_1
+    FOLDER = '/2.base views'
+    DATASOURCENAME=ds_dataset1
+    CATALOGNAME = '${databases.ei_core.folder.2.base views.views.jdbc.bv_trans_log_1.CATALOGNAME}'
+    SCHEMANAME = '${databases.ei_core.folder.2.base views.views.jdbc.bv_trans_log_1.SCHEMANAME}'
+    RELATIONNAME='trans_log_1' 
+    OUTPUTSCHEMA (
+        id = 'ID' :'java.lang.Integer' (OPT) (sourcetyperadix='10', sourcetypename='tinyint', sourcetypeid='-6', sourcetypedecimals='0', sourcetypesize='3')  SORTABLE,
+        name = 'NAME' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='nvarchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        hash_0 = 'HASH' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='nvarchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        state = 'STATE' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='nvarchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        percentdone = 'PERCENTDONE' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='nvarchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        downspeed = 'DOWNSPEED' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='nvarchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        upspeed = 'UPSPEED' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='nvarchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        have = 'HAVE' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='nvarchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        totalsize = 'TOTALSIZE' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='nvarchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        downloaded = 'DOWNLOADED' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='nvarchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        uploaded = 'UPLOADED' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='nvarchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        connectedto = 'CONNECTEDTO' :'java.lang.Integer' (OPT) (sourcetyperadix='10', sourcetypename='tinyint', sourcetypeid='-6', sourcetypedecimals='0', sourcetypesize='3')  SORTABLE,
+        uploadingto = 'UPLOADINGTO' :'java.lang.Integer' (OPT) (sourcetyperadix='10', sourcetypename='tinyint', sourcetypeid='-6', sourcetypedecimals='0', sourcetypesize='3')  SORTABLE,
+        downloadingfrom = 'DOWNLOADINGFROM' :'java.lang.Integer' (OPT) (sourcetyperadix='10', sourcetypename='tinyint', sourcetypeid='-6', sourcetypedecimals='0', sourcetypesize='3')  SORTABLE,
+        dateadded = 'DATEADDED' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='nvarchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        latestactivity = 'LATESTACTIVITY' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='nvarchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        downloadtime = 'DOWNLOADTIME' :'java.lang.Long' (OPT) (sourcetyperadix='10', sourcetypename='bigint', sourcetypeid='-5', sourcetypedecimals='0', sourcetypesize='19')  SORTABLE,
+        seedtime = 'SEEDTIME' :'java.lang.Long' (OPT) (sourcetyperadix='10', sourcetypename='bigint', sourcetypeid='-5', sourcetypedecimals='0', sourcetypesize='19')  SORTABLE,
+        as_of_date = 'as_of_date' :'java.lang.Integer' (OPT) (sourcetyperadix='10', sourcetypename='int', sourcetypeid='4', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE
+    );
+
+CREATE OR REPLACE TABLE bv_trans_log_1 I18N us_mst_mdt (
+        id:int (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '3', sourcetypeid = '-6'), 
+        name:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '-9'), 
+        hash_0:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '-9'), 
+        state:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '-9'), 
+        percentdone:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '-9'), 
+        downspeed:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '-9'), 
+        upspeed:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '-9'), 
+        have:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '-9'), 
+        totalsize:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '-9'), 
+        downloaded:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '-9'), 
+        uploaded:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '-9'), 
+        connectedto:int (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '3', sourcetypeid = '-6'), 
+        uploadingto:int (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '3', sourcetypeid = '-6'), 
+        downloadingfrom:int (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '3', sourcetypeid = '-6'), 
+        dateadded:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '-9'), 
+        latestactivity:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '-9'), 
+        downloadtime:long (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '-5'), 
+        seedtime:long (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '-5'), 
+        as_of_date:int (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '4')
+    )
+    FOLDER = '/2.base views'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_trans_log_1(
+        I18N us_mst_mdt
+        CONSTRAINTS (
+             ADD id (any) OPT ANY
+             ADD name (any) OPT ANY
+             ADD hash_0 (any) OPT ANY
+             ADD state (any) OPT ANY
+             ADD percentdone (any) OPT ANY
+             ADD downspeed (any) OPT ANY
+             ADD upspeed (any) OPT ANY
+             ADD have (any) OPT ANY
+             ADD totalsize (any) OPT ANY
+             ADD downloaded (any) OPT ANY
+             ADD uploaded (any) OPT ANY
+             ADD connectedto (any) OPT ANY
+             ADD uploadingto (any) OPT ANY
+             ADD downloadingfrom (any) OPT ANY
+             ADD dateadded (any) OPT ANY
+             ADD latestactivity (any) OPT ANY
+             ADD downloadtime (any) OPT ANY
+             ADD seedtime (any) OPT ANY
+             ADD as_of_date (any) OPT ANY
+        )
+        OUTPUTLIST (as_of_date, connectedto, dateadded, downloaded, downloadingfrom, downloadtime, downspeed, hash_0, have, id, latestactivity, name, percentdone, seedtime, state, totalsize, uploaded, uploadingto, upspeed
+        )
+        WRAPPER (jdbc bv_trans_log_1)
+    );
+

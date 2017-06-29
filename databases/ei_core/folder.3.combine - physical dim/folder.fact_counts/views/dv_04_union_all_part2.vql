@@ -1,0 +1,5 @@
+﻿CREATE OR REPLACE VIEW dv_04_union_all_part2 FOLDER = '/3.combine - physical dim/fact_counts' AS SELECT name, hash_0, connectedto, have, downloadtime, uploaded, downspeed, latestactivity, percentdone, dateadded, upspeed, downloadingfrom, downloaded, seedtime, as_of_date, uploadingto, totalsize, state, id FROM (SELECT * FROM dv_01_trans_log_1_names UNION SELECT seedtime, latestactivity, dateadded, downloadtime, as_of_date, have, state, percentdone, upspeed, uploaded, downloadingfrom, name2 AS name, id, uploadingto, hash2 AS hash_0, downspeed, connectedto, totalsize, downloaded FROM dv_02_trans_log_2_names) CONTEXT (DATAMOVEMENTPLAN = bv_trans_log_1 : OFF bv_trans_log_2 : OFF dv_02_trans_log_2_names : OFF);
+
+ALTER VIEW dv_04_union_all_part2
+ LAYOUT (dv_01_trans_log_1_names = [90, 197, 200, 225], dv_02_trans_log_2_names = [490, 200, 200, 225]);
+

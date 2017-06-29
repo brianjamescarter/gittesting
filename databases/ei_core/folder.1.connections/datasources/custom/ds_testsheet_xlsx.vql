@@ -1,0 +1,21 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE DATASOURCE CUSTOM ds_testsheet_xlsx
+    FOLDER = '/1.connections'
+    CLASSNAME='com.denodo.vdb.contrib.wrapper.xls.ExcelWrapper';
+
+CREATE OR REPLACE WRAPPER CUSTOM ds_testsheet_xlsx
+    FOLDER = '/2.base views'
+    DATASOURCENAME=ds_testsheet_xlsx
+    PARAMETERS (
+      'Type of file' = 'Excel 2007 or later (*.xlsx)',
+      'File location' = ROUTE LOCAL 'LocalConnection' '${databases.ei_core.folder.2.base views.views.custom.ds_testsheet_xlsx.File location.ROUTE.LOCAL.PATH}',
+      'Extract data from all sheets' = false,
+      'Extract sheet name as a new column' = false,
+      'Has headers' = true,
+      'Stream tuples' = true
+    )
+    OUTPUTSCHEMA (
+        cola = 'ColA' : 'java.lang.String' (OPT) SORTABLE,
+        colb = 'ColB' : 'java.lang.String' (OPT) SORTABLE
+    );
+
