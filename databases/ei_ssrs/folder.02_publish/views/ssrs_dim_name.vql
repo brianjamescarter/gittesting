@@ -1,0 +1,10 @@
+﻿CREATE OR REPLACE INTERFACE VIEW ssrs_dim_name (
+        hash_0:text (sourcetyperadix = '0', sourcetypeid = '-9', sourcetypedecimals = '0', sourcetypesize = '267'),
+        name:text (sourcetyperadix = '0', sourcetypeid = '-9', sourcetypedecimals = '0', sourcetypesize = '255')
+    )
+    SET IMPLEMENTATION ei_core.i_dim_name
+    FOLDER = '/02_publish';
+
+ALTER VIEW ssrs_dim_name
+ LAYOUT (i_dim_name = [591, 289, 200, 66]);
+
