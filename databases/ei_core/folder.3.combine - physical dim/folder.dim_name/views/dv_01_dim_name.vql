@@ -1,0 +1,5 @@
+﻿CREATE OR REPLACE VIEW dv_01_dim_name FOLDER = '/3.combine - physical dim/dim_name' AS SELECT bv_dim_name.hash_0 AS hash_0, bv_dim_name.name AS name FROM bv_dim_name;
+
+ALTER VIEW dv_01_dim_name
+ LAYOUT (bv_dim_name = [20, 20, 200, 66]);
+

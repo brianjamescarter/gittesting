@@ -1,0 +1,41 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC bv_dim_name1
+    FOLDER = '/2.base views'
+    DATASOURCENAME=ds_dataset1
+    CATALOGNAME = '${databases.ei_core.folder.2.base views.views.jdbc.bv_dim_name1.CATALOGNAME}'
+    SCHEMANAME = '${databases.ei_core.folder.2.base views.views.jdbc.bv_dim_name1.SCHEMANAME}'
+    RELATIONNAME='dim_name1' 
+    OUTPUTSCHEMA (
+        hash_0 = 'HASH' :'java.lang.String' (OPT) (sourcetypedecimals='0', sourcetyperadix='0', sourcetypesize='267', sourcetypeid='12', sourcetypename='nvarchar')  SORTABLE,
+        name = 'NAME' :'java.lang.String' (OPT) (sourcetypedecimals='0', sourcetyperadix='0', sourcetypesize='255', sourcetypeid='12', sourcetypename='nvarchar')  SORTABLE
+    );
+
+CREATE OR REPLACE WRAPPER JDBC ds_dataset2_bv_dim_name
+    DATASOURCENAME=ds_dataset2
+    CATALOGNAME = '${databases.ei_core.views.jdbc.ds_dataset2_bv_dim_name.CATALOGNAME}'
+    SCHEMANAME = '${databases.ei_core.views.jdbc.ds_dataset2_bv_dim_name.SCHEMANAME}'
+    RELATIONNAME='dim_name2' 
+    OUTPUTSCHEMA (
+        hash_0 = 'HASH2' :'java.lang.String' (OPT) (sourcetypesize='267', sourcetypeid='12', sourcetypedecimals='0', sourcetypename='nvarchar', sourcetyperadix='0')  SORTABLE,
+        name = 'NAME2' :'java.lang.String' (OPT) (sourcetypesize='255', sourcetypeid='12', sourcetypedecimals='0', sourcetypename='nvarchar', sourcetyperadix='0')  SORTABLE
+    );
+
+CREATE OR REPLACE TABLE bv_dim_name I18N us_mst_mdt (
+        hash_0:text (sourcetypedecimals = '0', sourcetyperadix = '0', sourcetypesize = '267', sourcetypeid = '-9'), 
+        name:text (sourcetypedecimals = '0', sourcetyperadix = '0', sourcetypesize = '255', sourcetypeid = '-9')
+    )
+    FOLDER = '/2.base views'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_dim_name1(
+        I18N us_mst_mdt
+        CONSTRAINTS (
+             ADD hash_0 (any) OPT ANY
+             ADD name (any) OPT ANY
+        )
+        OUTPUTLIST (hash_0, name
+        )
+        WRAPPER (jdbc bv_dim_name1)
+        ALTERNATIVE_WRAPPERS (jdbc ds_dataset2_bv_dim_name)
+    );
+

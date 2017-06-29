@@ -1,0 +1,5 @@
+﻿CREATE OR REPLACE VIEW dv_05_fact_record_count FOLDER = '/3.combine - original/fact_counts' AS SELECT dv_04_union_all.hash_0 AS hash_0, 1 AS total_record_count FROM dv_04_union_all;
+
+ALTER VIEW dv_05_fact_record_count
+ LAYOUT (dv_04_union_all = [20, 20, 200, 406]);
+

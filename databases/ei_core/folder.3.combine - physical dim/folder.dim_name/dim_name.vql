@@ -1,0 +1,2 @@
+﻿CREATE OR REPLACE FOLDER '/3.combine - physical dim/dim_name' ;
+

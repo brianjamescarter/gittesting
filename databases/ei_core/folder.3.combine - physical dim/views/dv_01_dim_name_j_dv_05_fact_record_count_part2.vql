@@ -1,0 +1,5 @@
+﻿CREATE OR REPLACE VIEW dv_01_dim_name_j_dv_05_fact_record_count_part2 FOLDER = '/3.combine - physical dim' AS SELECT dv_01_dim_name.name AS name, sum(dv_05_fact_record_count_part2.total_record_count) AS total_records, dv_05_fact_record_count_part2.state AS state FROM dv_01_dim_name AS dv_01_dim_name INNER JOIN dv_05_fact_record_count_part2 AS dv_05_fact_record_count_part2 ON dv_01_dim_name.hash_0 = dv_05_fact_record_count_part2.hash_0  GROUP BY dv_01_dim_name.name, dv_01_dim_name.name, dv_05_fact_record_count_part2.state CONTEXT (DATAMOVEMENTPLAN = bv_dim_name : OFF dv_01_dim_name : OFF);
+
+ALTER VIEW dv_01_dim_name_j_dv_05_fact_record_count_part2
+ LAYOUT (dv_01_dim_name = [80, 50, 200, 66], dv_05_fact_record_count_part2 = [360, 80, 200, 66]);
+

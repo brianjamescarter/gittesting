@@ -1,0 +1,5 @@
+﻿CREATE OR REPLACE DATABASE ei_core 'All connections and shared logic';
+
+ALTER DATABASE ei_core
+  CHARSET DEFAULT;
+

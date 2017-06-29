@@ -1,0 +1,5 @@
+﻿CREATE OR REPLACE VIEW dv_01_trans_log_1_names FOLDER = '/3.combine - original' AS SELECT bv_trans_log_1.name AS name, ('trans_log_1.'||bv_trans_log_1.hash_0) AS hash_0, bv_trans_log_1.connectedto AS connectedto, bv_trans_log_1.have AS have, bv_trans_log_1.downloadtime AS downloadtime, bv_trans_log_1.id AS id, bv_trans_log_1.uploaded AS uploaded, bv_trans_log_1.downspeed AS downspeed, bv_trans_log_1.latestactivity AS latestactivity, bv_trans_log_1.percentdone AS percentdone, bv_trans_log_1.dateadded AS dateadded, bv_trans_log_1.upspeed AS upspeed, bv_trans_log_1.downloadingfrom AS downloadingfrom, bv_trans_log_1.downloaded AS downloaded, bv_trans_log_1.seedtime AS seedtime, bv_trans_log_1.as_of_date AS as_of_date, bv_trans_log_1.uploadingto AS uploadingto, bv_trans_log_1.totalsize AS totalsize, bv_trans_log_1.state AS state FROM bv_trans_log_1;
+
+ALTER VIEW dv_01_trans_log_1_names
+ LAYOUT (bv_trans_log_1 = [20, 20, 200, 406]);
+

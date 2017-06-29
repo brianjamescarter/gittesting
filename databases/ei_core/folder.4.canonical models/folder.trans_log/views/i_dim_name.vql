@@ -1,0 +1,7 @@
+﻿CREATE OR REPLACE INTERFACE VIEW i_dim_name (
+        hash_0:text (sourcetyperadix = '0', sourcetypeid = '-9', sourcetypedecimals = '0', sourcetypesize = '267'),
+        name:text (sourcetyperadix = '0', sourcetypeid = '-9', sourcetypedecimals = '0', sourcetypesize = '255')
+    )
+    SET IMPLEMENTATION dv_01_dim_name
+    FOLDER = '/4.canonical models/trans_log';
+
